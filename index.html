@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inicio de Sesión</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlaza el archivo CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Enlaza jQuery -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal para centrar el contenido -->
+        <div class="login-form"> <!-- Contenedor del formulario de inicio de sesión -->
+            <form id="loginForm">
+                <div class="input-group"> <!-- Grupo de entrada para el usuario -->
+                    <label for="username">USER:</label> <!-- Etiqueta para el campo de usuario -->
+                    <input type="text" id="username" name="username" placeholder="Introduce tu usuario"> <!-- Campo de entrada para el usuario -->
+                </div>
+                <div class="input-group"> <!-- Grupo de entrada para la contraseña -->
+                    <label for="password">PASSWORD:</label> <!-- Etiqueta para el campo de contraseña -->
+                    <input type="password" id="password" name="password" placeholder="Introduce tu contraseña"> <!-- Campo de entrada para la contraseña -->
+                </div>
+                <button type="submit">LOGIN</button> <!-- Botón de envío del formulario -->
+            </form>
+            <div id="error-message" class="error-message"></div> <!-- Mensaje de error -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(event) {
+                event.preventDefault(); // Evita el envío del formulario por defecto
+
+                // Obtener los valores de usuario y contraseña
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                // Validar credenciales
+                if (username === 'skybot' && password === 'Anya2024_') {
+                    // Redirigir a la página con fondo azul
+                    window.location.href = 'starting.html';
+                } else {
+                    // Mostrar mensaje de error
+                    $('#error-message').text('Usuario o contraseña incorrectos.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

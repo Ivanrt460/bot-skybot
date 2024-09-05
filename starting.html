@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: url('fondo_start.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .operations {
+            list-style: none;
+            padding: 0;
+        }
+        .operations li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            margin-left: 50px; /* Ajusta este valor para mover la tarjeta a la izquierda */
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="card">
+            <h2>Dinero de la Wallet</h2>
+            <p id="wallet-amount">$6666</p>
+        </div>
+        <div class="card">
+            <h2>Dinero de la Operación</h2>
+            <p id="operation-amount">$6666</p>
+        </div>
+        <div class="card">
+            <h2>Historial de Operaciones</h2>
+            <ul class="operations" id="operations-history">
+                <li>Operación 1: $100 de ganancia</li>
+                <li>Operación 2: $200 de ganancia</li>
+                <li>Operación 3: $150 de ganancia</li>
+            </ul>
+        </div>
+        <div class="card chart-container">
+            <h2>Gráfica de Ganancias</h2>
+            <canvas id="profitsChart"></canvas>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('profitsChart').getContext('2d');
+            const profitsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                    datasets: [{
+                        label: 'Ganancias Mensuales',
+                        data: [500, 600, 800, 900, 700, 800, 1000, 1100, 1200, 1300, 1400, 1500],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+  background: url('fondo.png') no-repeat center center fixed; /* Imagen de fondo para index.html */
+  background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+  font-family: Arial, sans-serif; /* Fuente de texto para todo el documento */
+  color: white; /* Color del texto */
+  height: 100vh; /* Altura de la vista completa del navegador */
+  margin: 0; /* Elimina los márgenes predeterminados */
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  position: relative; /* Relativo para usar absolute en el formulario */
+}
+
+.container {
+  display: flex; /* Flexbox para centrar el contenido interno */
+  justify-content: flex-start; /* Alinea el contenido al inicio horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+  height: 100%; /* Altura completa del contenedor */
+  width: 100%; /* Ancho completo del contenedor */
+  box-sizing: border-box; /* Incluye el padding y borde en el tamaño total del contenedor */
+  padding: 20px; /* Espacio interno alrededor del contenedor */
+  position: relative; /* Relativo para usar absolute en el formulario */
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el formulario */
+  padding: 20px; /* Espacio interno del formulario */
+  border-radius: 10px; /* Bordes redondeados del formulario */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 65%; /* Ajusta este valor para bajar el formulario */
+  left: 72%; /* Ajusta este valor para mover el formulario a la izquierda */
+  transform: translate(-50%, -50%); /* Para centrar relativo a top y left */
+  width: 300px; /* Ancho fijo del formulario */
+}
+
+.input-group {
+  margin-bottom: 15px; /* Espacio inferior para separar los grupos de entrada */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+label {
+  font-size: 18px; /* Tamaño de fuente de las etiquetas */
+  margin-bottom: 5px; /* Espacio inferior para separar la etiqueta del campo */
+  display: block; /* Hace que la etiqueta ocupe toda la línea */
+  font-weight: bold; /* Negrita para las etiquetas */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Ancho completo de los campos de entrada */
+  padding: 10px; /* Espacio interno de los campos */
+  margin-top: 5px; /* Espacio superior para separar del label */
+  border: 2px solid #ffffff; /* Borde blanco */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye el padding y borde en el tamaño total */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  color: #000; /* Color del texto de entrada */
+}
+
+button {
+  width: 100%; /* Ancho completo del botón */
+  padding: 10px; /* Espacio interno del botón */
+  background-color: #1e3f5a; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 18px; /* Tamaño de fuente del botón */
+  font-weight: bold; /* Negrita */
+}
+  
